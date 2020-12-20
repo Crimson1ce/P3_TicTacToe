@@ -18,6 +18,8 @@ using std::cout;
 
 SmartComputerPlayer::SmartComputerPlayer(char player, char opponent)
 : MediumComputerPlayer(player, opponent) {
+    name = "Smart_Computer";
+    this->typeOfPlayer = 5;
 }
 
 SmartComputerPlayer::~SmartComputerPlayer() {

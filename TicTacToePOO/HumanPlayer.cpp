@@ -16,6 +16,7 @@ using std::cin;
 /* Constructor
  */
 HumanPlayer::HumanPlayer(string name, char player, char opponent) : Player(name, player, opponent) {
+    this->typeOfPlayer = 1;
 }
 
 /* Destructor

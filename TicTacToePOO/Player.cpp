@@ -64,3 +64,7 @@ void Player::setScore(int score) {
         this->score = score;
     }
 }
+
+int Player::getTypeOfPlayer() {
+    return this->typeOfPlayer;
+}

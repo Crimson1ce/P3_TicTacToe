@@ -12,6 +12,7 @@ using std::string;
 DumbComputerPlayer::DumbComputerPlayer(char player, char opponent)
 : RandomComputerPlayer(player, opponent) {
     name = "Dumb_Computer";
+    this->typeOfPlayer = 3;
 }
 
 DumbComputerPlayer::~DumbComputerPlayer() {
