@@ -35,9 +35,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/AdminHistorial.o \
 	${OBJECTDIR}/CharMatrix.o \
 	${OBJECTDIR}/DumbComputerPlayer.o \
-	${OBJECTDIR}/Historial.o \
 	${OBJECTDIR}/HumanPlayer.o \
 	${OBJECTDIR}/MediumComputerPlayer.o \
 	${OBJECTDIR}/Partida.o \
@@ -73,6 +73,11 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tictactoepoo.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/tictactoepoo ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/AdminHistorial.o: AdminHistorial.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AdminHistorial.o AdminHistorial.cpp
+
 ${OBJECTDIR}/CharMatrix.o: CharMatrix.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
@@ -82,11 +87,6 @@ ${OBJECTDIR}/DumbComputerPlayer.o: DumbComputerPlayer.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/DumbComputerPlayer.o DumbComputerPlayer.cpp
-
-${OBJECTDIR}/Historial.o: Historial.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Historial.o Historial.cpp
 
 ${OBJECTDIR}/HumanPlayer.o: HumanPlayer.cpp
 	${MKDIR} -p ${OBJECTDIR}

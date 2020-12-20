@@ -58,7 +58,7 @@ public:
     bool isAvailable(string board, int position);
     
     /* Getter of the player type */
-    int getTypeOfPlayer();
+    int getType();
     
 protected:
     //Name of the player
@@ -70,7 +70,7 @@ protected:
     //Character the opponent is playing with
     char opponentChar;
     //Type of player
-    int typeOfPlayer;
+    int type;
 
 };
 

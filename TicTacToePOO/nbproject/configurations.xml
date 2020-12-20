@@ -4,9 +4,9 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>AdminHistorial.h</itemPath>
       <itemPath>CharMatrix.h</itemPath>
       <itemPath>DumbComputerPlayer.h</itemPath>
-      <itemPath>Historial.h</itemPath>
       <itemPath>HumanPlayer.h</itemPath>
       <itemPath>MediumComputerPlayer.h</itemPath>
       <itemPath>Partida.h</itemPath>
@@ -23,9 +23,9 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>AdminHistorial.cpp</itemPath>
       <itemPath>CharMatrix.cpp</itemPath>
       <itemPath>DumbComputerPlayer.cpp</itemPath>
-      <itemPath>Historial.cpp</itemPath>
       <itemPath>HumanPlayer.cpp</itemPath>
       <itemPath>MediumComputerPlayer.cpp</itemPath>
       <itemPath>Partida.cpp</itemPath>
@@ -58,6 +58,10 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="AdminHistorial.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="AdminHistorial.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="CharMatrix.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="CharMatrix.h" ex="false" tool="3" flavor2="0">
@@ -65,10 +69,6 @@
       <item path="DumbComputerPlayer.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="DumbComputerPlayer.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Historial.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Historial.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="HumanPlayer.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -125,6 +125,10 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="AdminHistorial.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="AdminHistorial.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="CharMatrix.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="CharMatrix.h" ex="false" tool="3" flavor2="0">
@@ -132,10 +136,6 @@
       <item path="DumbComputerPlayer.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="DumbComputerPlayer.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Historial.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Historial.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="HumanPlayer.cpp" ex="false" tool="1" flavor2="0">
       </item>

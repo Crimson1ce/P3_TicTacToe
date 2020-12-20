@@ -65,6 +65,6 @@ void Player::setScore(int score) {
     }
 }
 
-int Player::getTypeOfPlayer() {
-    return this->typeOfPlayer;
+int Player::getType() {
+    return this->type;
 }
