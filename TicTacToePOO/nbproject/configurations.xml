@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>CharMatrix.h</itemPath>
+      <itemPath>DumbComputerPlayer.h</itemPath>
+      <itemPath>Historial.h</itemPath>
+      <itemPath>HumanPlayer.h</itemPath>
+      <itemPath>MediumComputerPlayer.h</itemPath>
+      <itemPath>Partida.h</itemPath>
+      <itemPath>Player.h</itemPath>
+      <itemPath>RandomComputerPlayer.h</itemPath>
+      <itemPath>SmartComputerPlayer.h</itemPath>
+      <itemPath>SymmetricCharMatrix.h</itemPath>
+      <itemPath>TicTacToeBoard.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>CharMatrix.cpp</itemPath>
+      <itemPath>DumbComputerPlayer.cpp</itemPath>
+      <itemPath>Historial.cpp</itemPath>
+      <itemPath>HumanPlayer.cpp</itemPath>
+      <itemPath>MediumComputerPlayer.cpp</itemPath>
+      <itemPath>Partida.cpp</itemPath>
+      <itemPath>Player.cpp</itemPath>
+      <itemPath>RandomComputerPlayer.cpp</itemPath>
+      <itemPath>SmartComputerPlayer.cpp</itemPath>
+      <itemPath>SymmetricCharMatrix.cpp</itemPath>
+      <itemPath>TicTacToeBoard.cpp</itemPath>
+      <itemPath>main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+      </compileType>
+      <item path="CharMatrix.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CharMatrix.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DumbComputerPlayer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DumbComputerPlayer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Historial.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Historial.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="HumanPlayer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="HumanPlayer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MediumComputerPlayer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MediumComputerPlayer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Partida.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Partida.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Player.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Player.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="RandomComputerPlayer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="RandomComputerPlayer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SmartComputerPlayer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SmartComputerPlayer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SymmetricCharMatrix.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SymmetricCharMatrix.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TicTacToeBoard.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TicTacToeBoard.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="CharMatrix.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CharMatrix.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DumbComputerPlayer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DumbComputerPlayer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Historial.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Historial.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="HumanPlayer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="HumanPlayer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MediumComputerPlayer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MediumComputerPlayer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Partida.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Partida.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Player.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Player.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="RandomComputerPlayer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="RandomComputerPlayer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SmartComputerPlayer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SmartComputerPlayer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SymmetricCharMatrix.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SymmetricCharMatrix.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TicTacToeBoard.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TicTacToeBoard.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
