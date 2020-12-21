@@ -6,6 +6,10 @@
 #ifndef ADMINHISTORIAL_H
 #define ADMINHISTORIAL_H
 
+#include "Player.h"
+
+class Partida;
+
 #include <fstream>
 using std::ifstream;
 using std::ofstream;
@@ -29,7 +33,7 @@ public:
     void guardarHistorial(Partida* partida);
     
     /* Carga la partida y todas las jugadas */
-    void cargarHistorial();
+    bool cargarHistorial();
     
     /* Retorna una instancia del Player1 guardado, si la hay. */
     Player* getPlayer1();

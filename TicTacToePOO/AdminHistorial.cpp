@@ -35,7 +35,7 @@ AdminHistorial::~AdminHistorial() {
 }
 
 void AdminHistorial::guardarHistorial(Partida* partida) {
-    escritura.open("Juego\\Partida_Guardada.txt", ios::out | ios::trunc);
+    escritura.open("Game\\Partida_Guardada.txt", ios::out | ios::trunc);
     if (escritura.is_open()) {
         
         escritura << partida->state << '\n';
@@ -61,7 +61,7 @@ void AdminHistorial::guardarHistorial(Partida* partida) {
 }
 
 bool AdminHistorial::cargarHistorial() {
-    lectura.open("Juego\\Partida_Guardada.txt");
+    lectura.open("Game\\Partida_Guardada.txt");
     if (lectura.is_open()) {
 
         lectura >> state;
@@ -149,26 +149,26 @@ Player* AdminHistorial::getPlayer2() {
         
         switch (this->typePlayer2) {
             case 1: { //Jugador humano
-                player2 = new HumanPlayer(this->namePlayer2, 'X', '0');
+                player2 = new HumanPlayer(this->namePlayer2, '0', 'X');
                 break;
             }
             case 2: { //Computadora aleatoria
-                player2 = new RandomComputerPlayer('X', '0');
+                player2 = new RandomComputerPlayer('0', 'X');
                 player2->setName(this->namePlayer2);
                 break;
             }
             case 3: { //Computadora tonta
-                player2 = new DumbComputerPlayer('X', '0');
+                player2 = new DumbComputerPlayer('0', 'X');
                 player2->setName(this->namePlayer2);
                 break;
             }
             case 4: { //Computadora media
-                player2 = new MediumComputerPlayer('X', '0');
+                player2 = new MediumComputerPlayer('0', 'X');
                 player2->setName(this->namePlayer2);
                 break;
             }
             case 5: { //Computadora inteligente
-                player2 = new SmartComputerPlayer('X', '0');
+                player2 = new SmartComputerPlayer('0', 'X');
                 player2->setName(this->namePlayer2);
                 break;
             }

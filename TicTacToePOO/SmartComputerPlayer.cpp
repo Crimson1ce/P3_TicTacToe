@@ -19,7 +19,7 @@ using std::cout;
 SmartComputerPlayer::SmartComputerPlayer(char player, char opponent)
 : MediumComputerPlayer(player, opponent) {
     name = "Smart_Computer";
-    this->typeOfPlayer = 5;
+    this->type = 5;
 }
 
 SmartComputerPlayer::~SmartComputerPlayer() {
@@ -76,7 +76,8 @@ int SmartComputerPlayer::move(string board) {
 
         int played = getLastPlay(board);
 
-        if (played == 5) { //En este caso, se forzará un empate
+        if (played == 5) { //En este caso, se forzará un empate (el peor caso)
+            cout << "\n\nJugo el centro\n\n";
             //Jugamos una esquina
             lastMove = getRandomCorner(board);
 
@@ -90,7 +91,8 @@ int SmartComputerPlayer::move(string board) {
             lastState[lastMove - 1] = playerChar;
             
             return lastMove;
-        } else {
+        } else if (played % 2 == 1) { //Si el oponente jugó una esquina
+            cout << "\n\nJugo una esquina\n\n";
             lastMove = 5;
 
             //Actualizamos nuestro string del último estado
@@ -98,6 +100,17 @@ int SmartComputerPlayer::move(string board) {
             lastState[lastMove - 1] = playerChar;
             
             return 5;
+        } else { //Si el oponente jugó un lado
+            cout << "\n\nJugo un lado\n\n";
+            do {
+                lastMove = getRandomCorner(board); //Jugamos una esquina
+            } while (!areHorizontallyAdjacent(lastMove, played) && !areVerticallyAdjacent(lastMove, played));
+
+            //Actualizamos nuestro string del último estado
+            lastState = board;
+            lastState[lastMove - 1] = playerChar;
+            
+            return lastMove;
         }
     } else if (turn == 3) {
 

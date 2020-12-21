@@ -29,6 +29,14 @@ public:
      */
     char getOpponentChar();
     
+    /* Sets the character the player is playing with
+     */
+    void setPlayerChar(char player);
+    
+    /* Sets the character the opponent is playing with
+     */
+    void setOpponentChar(char opponent);
+    
     /* Returns the player name
      */
     string getName();

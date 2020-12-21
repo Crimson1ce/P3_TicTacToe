@@ -8,14 +8,13 @@
 
 #include "Player.h"
 #include "TicTacToeBoard.h"
+#include "AdminHistorial.h"
 
 #include <string>
 using std::string;
 
 #include <vector>
 using std::vector;
-
-class AdminHistorial;
 
 class Partida {
 public:
@@ -42,6 +41,21 @@ public:
     
     /* Checks if someone has won. */
     bool checkWinner(string board, char letter);
+    
+    /* Returns a pointer to Player1 */
+    Player* getPlayer1();
+    
+    /* Returns a pointer to Player2 */
+    Player* getPlayer2();
+    
+    /* Frees the memory of the player pointers */
+    void freePlayersMemory();
+    
+    /* Reuses the current player instances. */
+    void reusePlayers();
+    
+    /* Prepares the TicTacToe Board for a new game */
+    void cleanBoard();
     
 private:
     Player* player1;

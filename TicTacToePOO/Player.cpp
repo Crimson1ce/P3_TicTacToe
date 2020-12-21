@@ -68,3 +68,16 @@ void Player::setScore(int score) {
 int Player::getType() {
     return this->type;
 }
+
+void Player::setOpponentChar(char opponent) {
+    if (opponent == '0' || opponent == 'X') {
+        this->opponentChar = opponent;
+    }
+}
+
+void Player::setPlayerChar(char player) {
+    if (player == '0' || player == 'X') {
+        this->playerChar = player;
+    }
+}
+

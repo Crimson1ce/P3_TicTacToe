@@ -16,7 +16,7 @@ using std::cin;
 /* Constructor
  */
 HumanPlayer::HumanPlayer(string name, char player, char opponent) : Player(name, player, opponent) {
-    this->typeOfPlayer = 1;
+    this->type = 1;
 }
 
 /* Destructor
@@ -27,16 +27,9 @@ HumanPlayer::~HumanPlayer() {
 /* Receives from the user a position to play on the board.
  */
 int HumanPlayer::move(string board) {
-    
     int position;
     
-    cout << "Ingrese una posicion a jugar: ";
     cin >> position;
-
-    while (position < 1 || position > 9 && !isAvailable(board,position)) {
-        cout << "Ingrese una posicion valida: ";
-        cin >> position;
-    }
     
     return position;
 }

@@ -12,7 +12,7 @@ using std::string;
 MediumComputerPlayer::MediumComputerPlayer(char player, char opponent)
 : DumbComputerPlayer(player, opponent) {
     name = "Medium_Computer";
-    this->typeOfPlayer = 1;
+    this->type = 4;
 }
 
 MediumComputerPlayer::~MediumComputerPlayer() {

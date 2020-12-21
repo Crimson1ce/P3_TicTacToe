@@ -18,7 +18,7 @@ using std::string;
 RandomComputerPlayer::RandomComputerPlayer(char player, char opponent)
 : Player("Random_Computer", player, opponent) {
     srand(time(0));
-    this->typeOfPlayer = 2;
+    this->type = 2;
 }
 
 /* Deconstructor
