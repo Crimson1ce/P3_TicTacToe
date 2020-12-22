@@ -13,12 +13,13 @@ using std::string;
 #include <cstdlib>
 #include <ctime>
 
-
-
 //Muestra el menu de opciones del juego
 int menuPrincipal();
 //Muestra el puntaje de los jugadores actuales
 void mostrarPuntajes(Partida* partida);
+
+//Contador de empates de los jugadores actuales
+int empates = 0;
 
 /*
  * Proyecto de Programación 3: TicTacToe con POO
@@ -46,10 +47,12 @@ int main(int argc, char** argv) {
                 cout << endl;
 
                 if (decision == 1) {
+                    empates = 0;
                     partida->conseguirJugadores();
                 } else {
                     if (partida->getPlayer1() == NULL || partida->getPlayer2() == NULL) {
                         cout << "No se han establecido jugadores aun.\n\n";
+                        empates = 0;
                         partida->conseguirJugadores();
                     } else {
                         partida->reusePlayers();
@@ -58,12 +61,21 @@ int main(int argc, char** argv) {
 
                 partida->cleanBoard();
                 partida->jugar();
-
+                
+                if (partida->getState() == '#') {
+                    empates++;
+                }
+                
                 break;
             }
             case 2:
             {
                 partida->cargarPartida();
+                
+                if (partida->getState() == '#') {
+                    empates++;
+                }
+                
                 break;
             }
             case 3:
@@ -130,6 +142,7 @@ int menuPrincipal() {
         cin >> opcion;
     }
     cout << endl << endl;
+    cin.ignore();
 
     return opcion;
 }
@@ -141,9 +154,14 @@ void mostrarPuntajes(Partida* partida) {
     cout << "\u001B[31m\u001B[47m" << "|" << "\u001B[0m" << endl;
     
     if (partida->getPlayer1() == NULL || partida->getPlayer2() == NULL) {
-        cout << "| No hay puntajes para mostrar." << endl;
+        cout << "\u001B[31m\u001B[47m" << "| No hay puntajes para mostrar." << "\u001B[0m" << endl;
         return;
     }
-    cout << "\u001B[31m\u001B[47m" << "| Puntos: " << partida->getPlayer1()->getScore() << " - " << partida->getPlayer1()->getName() << "\u001B[0m" << endl;
-    cout << "\u001B[31m\u001B[47m" << "| Puntos: " << partida->getPlayer2()->getScore() << " - " << partida->getPlayer2()->getName() << "\u001B[0m" << endl;
+    cout << "\u001B[31m\u001B[47m" << "| Puntos:  " << partida->getPlayer1()->getScore() << " - " << partida->getPlayer1()->getName() << " \u001B[0m" << endl;
+    cout << "\u001B[31m\u001B[47m" << "| Puntos:  " << partida->getPlayer2()->getScore() << " - " << partida->getPlayer2()->getName() << " \u001B[0m" << endl;
+    cout << "\u001B[31m\u001B[47m" << "| Empates: " << empates << " \u001B[0m" << endl;
+    
+    cout << "\nPresione ENTER para continuar...";
+    cin.ignore();
+    cout << '\n';
 }

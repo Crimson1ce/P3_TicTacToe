@@ -48,6 +48,9 @@ public:
     /* Returns a pointer to Player2 */
     Player* getPlayer2();
     
+    /* Returns a char representing the state of the game */
+    char getState();
+    
     /* Frees the memory of the player pointers */
     void freePlayersMemory();
     

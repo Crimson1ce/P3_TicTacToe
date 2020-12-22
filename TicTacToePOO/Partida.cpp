@@ -438,7 +438,9 @@ void Partida::reusePlayers() {
         player1->setPlayerChar('X');
         player1->setOpponentChar('0');
         player2->setPlayerChar('0');
-        player2->setOpponentChar('X');
+        player2->setOpponentChar('X
+        
+        turn = 'X';
     }
     
     player1->prepareNewGame();
@@ -450,4 +452,8 @@ void Partida::cleanBoard() {
     if (board != NULL) {
         board->initMatrix();
     }
+}
+
+char Partida::getState() {
+    return this->state;
 }

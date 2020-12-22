@@ -223,18 +223,27 @@ int SmartComputerPlayer::move(string board) {
                 }
             }
             // Si el oponente jugó el centro (lo que signofica que nosotros 
-            // jugamos esquina), jugamos un lado para empatar.
+            // jugamos esquina)
         } else if (board[4] == opponentChar) {
             //Si él jugó una esquina y yo había jugado la opuesta
             if (played % 2 == 1 && areOpposite(lastMove, played)) {
-                //Jugamos un lado para empatar
-                lastMove = getRandomSide(board);
+                //Jugamos una esquina para empatar
+                lastMove = getRandomCorner(board);
 
                 //Actualizamos nuestro string del último estado
                 lastState = board;
                 lastState[lastMove - 1] = playerChar;
 
                 return lastMove;
+            } else {
+                do {
+                //Jugamos una esquina para empatar
+                lastMove = getRandomCorner(board);
+                } while (!isAvailable(board,lastMove));
+
+                //Actualizamos nuestro string del último estado
+                lastState = board;
+                lastState[lastMove - 1] = playerChar;
             }
         } else if (board[4] == '_') { //Si aún no se ha jugado el centro
             //Jugamos centro
