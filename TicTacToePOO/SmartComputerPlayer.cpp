@@ -29,7 +29,7 @@ int SmartComputerPlayer::move(string board) {
     int position = defend_attack(board, playerChar);
     if (position != 0) {
         lastMove = position;
-        
+
         //Actualizamos nuestro string del último estado
         lastState = board;
         lastState[lastMove - 1] = playerChar;
@@ -39,7 +39,7 @@ int SmartComputerPlayer::move(string board) {
     position = defend_attack(board, opponentChar);
     if (position != 0) {
         lastMove = position;
-        
+
         //Actualizamos nuestro string del último estado
         lastState = board;
         lastState[lastMove - 1] = playerChar;
@@ -47,7 +47,7 @@ int SmartComputerPlayer::move(string board) {
     }
 
     if (nextMove) {
-        
+
         int aux = nextMove;
         nextMove = 0;
         lastState = board;
@@ -70,14 +70,14 @@ int SmartComputerPlayer::move(string board) {
         //Actualizamos nuestro string del último estado
         lastState = board;
         lastState[lastMove - 1] = playerChar;
-        
+
         return lastMove;
     } else if (turn == 2) {
 
         int played = getLastPlay(board);
 
         if (played == 5) { //En este caso, se forzará un empate (el peor caso)
-            cout << "\n\nJugo el centro\n\n";
+            //cout << "\n\nJugo el centro\n\n";
             //Jugamos una esquina
             lastMove = getRandomCorner(board);
 
@@ -89,19 +89,19 @@ int SmartComputerPlayer::move(string board) {
             //Actualizamos nuestro string del último estado
             lastState = board;
             lastState[lastMove - 1] = playerChar;
-            
+
             return lastMove;
         } else if (played % 2 == 1) { //Si el oponente jugó una esquina
-            cout << "\n\nJugo una esquina\n\n";
+            //cout << "\n\nJugo una esquina\n\n";
             lastMove = 5;
 
             //Actualizamos nuestro string del último estado
             lastState = board;
             lastState[lastMove - 1] = playerChar;
-            
+
             return 5;
         } else { //Si el oponente jugó un lado
-            cout << "\n\nJugo un lado\n\n";
+            //cout << "\n\nJugo un lado\n\n";
             do {
                 lastMove = getRandomCorner(board); //Jugamos una esquina
             } while (!areHorizontallyAdjacent(lastMove, played) && !areVerticallyAdjacent(lastMove, played));
@@ -109,7 +109,7 @@ int SmartComputerPlayer::move(string board) {
             //Actualizamos nuestro string del último estado
             lastState = board;
             lastState[lastMove - 1] = playerChar;
-            
+
             return lastMove;
         }
     } else if (turn == 3) {
@@ -125,22 +125,23 @@ int SmartComputerPlayer::move(string board) {
             //Actualizamos nuestro string del último estado
             lastState = board;
             lastState[lastMove - 1] = playerChar;
-            
+
             return lastMove;
 
         }//Si el oponente jugó un lado
         else if (played % 2 == 0) {
 
             //Si fue un lado adyacente
-            if (areHorizontallyAdjacent(played, lastMove || areVerticallyAdjacent(played, lastMove))) {
+            if (areHorizontallyAdjacent(played, lastMove) || areVerticallyAdjacent(played, lastMove)) {
                 for (int i = 0; i < 4; i++) {
                     //Elegimos una casilla que no sea adyacente a la recién jugada 
                     //por el oponente ni opuesta a nuestra primera jugada.
                     // (Una esquina adyacente.)
+                    //cout << "\nJugo un lado adyacente, ultimo movimiento es " << lastMove << "\n";
                     if (!areHorizontallyAdjacent(played, corners[i])
                             && !areVerticallyAdjacent(played, corners[i])
                             && !areOpposite(lastMove, corners[i])) {
-
+                        //cout << "\nEureka\n";
                         //Nuestra siguiente jugada será la esquina opuesta a la primera
                         nextMove = 10 - lastMove;
                         lastMove = corners[i];
@@ -148,31 +149,23 @@ int SmartComputerPlayer::move(string board) {
                         //Actualizamos nuestro string del último estado
                         lastState = board;
                         lastState[lastMove - 1] = playerChar;
-                        
+
                         return lastMove;
                     }
                 }
             }//Si fue un lado no adyacente
             else {
-                for (int i = 0; i < 4; i++) {
-                    //Elegimos una esquina que no sea adyacente a la recién jugada 
-                    //por el oponente ni opuesta a nuestra primera jugada.
-                    //(Una esquina adyacente.)
-                    if (!areHorizontallyAdjacent(played, corners[i])
-                            && !areVerticallyAdjacent(played, corners[i])
-                            && corners[i] != lastMove) {
 
-                        //Nuestra siguiente jugada será el centro
-                        lastMove = corners[i];
-                        nextMove = 5;
 
-                        //Actualizamos nuestro string del último estado
-                        lastState = board;
-                        lastState[lastMove - 1] = playerChar;
+                //Jugamos el centro
+                lastMove = 5;
 
-                        return lastMove;
-                    }
-                }
+                //Actualizamos nuestro string del último estado
+                lastState = board;
+                lastState[lastMove - 1] = playerChar;
+
+                return lastMove;
+
             }
 
         }//Si jugó una esquina
@@ -243,13 +236,22 @@ int SmartComputerPlayer::move(string board) {
 
                 return lastMove;
             }
+        } else if (board[4] == '_') { //Si aún no se ha jugado el centro
+            //Jugamos centro
+            lastMove = 5;
+
+            //Actualizamos nuestro string del último estado
+            lastState = board;
+            lastState[lastMove - 1] = playerChar;
+
+            return lastMove;
         }
     }
 
     position = searchThreats(board, playerChar, opponentChar);
     if (position != 0) {
         lastMove = position;
-        
+
         //Actualizamos nuestro string del último estado
         lastState = board;
         lastState[lastMove - 1] = playerChar;
@@ -259,14 +261,15 @@ int SmartComputerPlayer::move(string board) {
     position = searchThreats(board, opponentChar, playerChar);
     if (position != 0) {
         lastMove = position;
-        
+
         //Actualizamos nuestro string del último estado
         lastState = board;
         lastState[lastMove - 1] = playerChar;
         return position;
     }
 
-    
+
+    cout << "\nRandom\n";
     lastMove = RandomComputerPlayer::move(board);
 
     //Actualizamos nuestro string del último estado
@@ -362,28 +365,34 @@ int SmartComputerPlayer::searchThreats(string board, char good, char bad) {
                 && board[winning[i][1] - 1] != bad
                 && board[winning[i][2] - 1] != bad)
                 ) {
- 
+
             //if (board[winning[i][0] - 1] == ' ') {
-                positions[ winning[i][0] - 1 ]++;
+            positions[ winning[i][0] - 1 ]++;
             //}
-            
+
             //if (board[winning[i][1] - 1] == ' ') {
-                positions[ winning[i][1] - 1 ]++;
+            positions[ winning[i][1] - 1 ]++;
             //}
-            
+
             //if (board[winning[i][2] - 1] == ' ') {
-                positions[ winning[i][2] - 1 ]++;
+            positions[ winning[i][2] - 1 ]++;
             //}
         }
 
     }
     int max = 0, pos = 0;
     for (int i = 0; i < 9; i++) {
-        
+
         if (positions[i] > max && board[i] == '_') {
             max = positions[i];
             pos = i + 1;
         }
     }
     return pos;
+}
+
+void SmartComputerPlayer::prepareNewGame() {
+    nextMove = 0;
+    lastMove = 0;
+    lastState = "_________";
 }

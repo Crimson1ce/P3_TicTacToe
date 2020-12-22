@@ -36,3 +36,7 @@ int RandomComputerPlayer::move(string board) {
         }
     }
 }
+
+void RandomComputerPlayer::prepareNewGame() {
+
+}

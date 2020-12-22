@@ -81,3 +81,6 @@ void Player::setPlayerChar(char player) {
     }
 }
 
+void Player::prepareNewGame() {
+
+}

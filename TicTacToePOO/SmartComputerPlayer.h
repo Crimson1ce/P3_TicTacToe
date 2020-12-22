@@ -19,6 +19,8 @@ public:
     virtual ~SmartComputerPlayer();
     
     virtual int move(string board);
+    
+    virtual void prepareNewGame();
 
 private:
     bool areVerticallyAdjacent(int pos1, int pos2);

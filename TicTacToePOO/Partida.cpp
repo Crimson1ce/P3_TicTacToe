@@ -189,7 +189,7 @@ void Partida::jugar() {
 
     cout << endl << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
     board->printBoard();
-
+    
     this->state = '?';
 
     this->jugadas.push_back(board->toString());
@@ -204,7 +204,7 @@ void Partida::jugar() {
                     cout << position << endl;
                 }
             } while (position != -1 && (position < 1 || position > 9 || !board->setPosition(position, player1->getPlayerChar())));
-
+            //cout << " sjdakfsd " << endl;
             guardarPartida();
             if (position == -1) {
                 cout << "\nLa partida se ha guardado.\n";
@@ -253,7 +253,6 @@ void Partida::jugar() {
 
     }
     cout << "\nPresione ENTER para continuar...";
-    cin.ignore();
     cin.ignore();
     cout << endl;
 }
@@ -441,6 +440,9 @@ void Partida::reusePlayers() {
         player2->setPlayerChar('0');
         player2->setOpponentChar('X');
     }
+    
+    player1->prepareNewGame();
+    player2->prepareNewGame();
     jugadas.clear();
 }
 

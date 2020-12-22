@@ -22,6 +22,8 @@ public:
      * vertically, in which case it defends itself. */
     virtual int move(string board);
     
+    virtual void prepareNewGame();
+
 protected:
     /* Looks to defend against vertical and horizontal wins, or attack,
      * given the chance. */

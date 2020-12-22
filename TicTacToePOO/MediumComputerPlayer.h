@@ -19,6 +19,9 @@ public:
     virtual ~MediumComputerPlayer();
     
     virtual int move(string board);
+    
+    virtual void prepareNewGame();
+
 
 protected:
     /* Looks for attack or defend positions, depending on the character. */

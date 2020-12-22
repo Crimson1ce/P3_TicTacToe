@@ -24,6 +24,10 @@ public:
     /* Returns a random available position
      */
     int move(string board);
+    
+    virtual void prepareNewGame();
+
+
 };
 
 #endif /* RANDOMCOMPUTERPLAYER_H */

@@ -63,3 +63,7 @@ int MediumComputerPlayer::defend_attack(string board, char player) {
     return 0;
 
 }
+
+void MediumComputerPlayer::prepareNewGame() {
+
+}

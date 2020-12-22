@@ -27,6 +27,9 @@ public:
      */
     int move(string board);
     
+    void prepareNewGame();
+
+    
 private:
 
 };

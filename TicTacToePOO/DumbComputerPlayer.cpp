@@ -61,3 +61,7 @@ int DumbComputerPlayer::defend_attack(string board, char player) {
     }
     return 0;
 }
+
+void DumbComputerPlayer::prepareNewGame() {
+
+}

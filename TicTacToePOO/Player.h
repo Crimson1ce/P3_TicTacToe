@@ -68,6 +68,9 @@ public:
     /* Getter of the player type */
     int getType();
     
+    /* Prepares the attributes of the player for a new game */
+    virtual void prepareNewGame();
+    
 protected:
     //Name of the player
     string name;

@@ -96,29 +96,29 @@ int main(int argc, char** argv) {
 
     } while (option != 5);
 
-    cout << "\nNos vemos!\n";
+    cout << "Nos vemos!\n";
 
     delete partida;
     return 0;
 }
 
 int menuPrincipal() {
-    cout << "+-----------------------------+" << endl;
-    cout << "|                             |" << endl;
-    cout << "|    T I C - T A C - T O E    |" << endl;
-    cout << "|     R E V O L U T I O N     |" << endl;
-    cout << "|                             |" << endl;
-    cout << "+----+------------------------+" << endl;
-    cout << "| 1. | Nueva partida          |" << endl;
-    cout << "+~~~~+~~~~~~~~~~~~~~~~~~~~~~~~+" << endl;
-    cout << "| 2. | Cargar partida         |" << endl;
-    cout << "+~~~~+~~~~~~~~~~~~~~~~~~~~~~~~+" << endl;
-    cout << "| 3. | Recrear ultima partida |" << endl;
-    cout << "+~~~~+~~~~~~~~~~~~~~~~~~~~~~~~+" << endl;
-    cout << "| 4. | Ver puntajes           |" << endl;
-    cout << "+~~~~+~~~~~~~~~~~~~~~~~~~~~~~~+" << endl;
-    cout << "| 5. | Salir                  |" << endl;
-    cout << "+----+------------------------+" << endl << endl;
+    cout << "\u001B[31m\u001B[47m" << "+-----------------------------+" << "\u001B[0m" << endl;
+    cout << "\u001B[31m\u001B[47m" << "|                             |" << "\u001B[0m" << endl;
+    cout << "\u001B[31m\u001B[47m" << "|    T I C - T A C - T O E    |" << "\u001B[0m" << endl;
+    cout << "\u001B[31m\u001B[47m" << "|     R E V O L U T I O N     |" << "\u001B[0m" << endl;
+    cout << "\u001B[31m\u001B[47m" << "|                             |" << "\u001B[0m" << endl;
+    cout << "\u001B[31m\u001B[47m" << "+----+------------------------+" << "\u001B[0m" << endl;
+    cout << "\u001B[31m\u001B[47m" << "| 1. | Nueva partida          |" << "\u001B[0m" << endl;
+    cout << "\u001B[31m\u001B[47m" << "+~~~~+~~~~~~~~~~~~~~~~~~~~~~~~+" << "\u001B[0m" << endl;
+    cout << "\u001B[31m\u001B[47m" << "| 2. | Cargar partida         |" << "\u001B[0m" << endl;
+    cout << "\u001B[31m\u001B[47m" << "+~~~~+~~~~~~~~~~~~~~~~~~~~~~~~+" << "\u001B[0m" << endl;
+    cout << "\u001B[31m\u001B[47m" << "| 3. | Recrear ultima partida |" << "\u001B[0m" << endl;
+    cout << "\u001B[31m\u001B[47m" << "+~~~~+~~~~~~~~~~~~~~~~~~~~~~~~+" << "\u001B[0m" << endl;
+    cout << "\u001B[31m\u001B[47m" << "| 4. | Ver puntajes           |" << "\u001B[0m" << endl;
+    cout << "\u001B[31m\u001B[47m" << "+~~~~+~~~~~~~~~~~~~~~~~~~~~~~~+" << "\u001B[0m" << endl;
+    cout << "\u001B[31m\u001B[47m" << "| 5. | Salir                  |" << "\u001B[0m" << endl;
+    cout << "\u001B[31m\u001B[47m" << "+----+------------------------+" << "\u001B[0m" << endl << endl;
 
     int opcion;
 
@@ -135,15 +135,15 @@ int menuPrincipal() {
 }
 
 void mostrarPuntajes(Partida* partida) {
-    cout << "+~~~~~~~~~~~~~~~~~~~~~~~~~~~+" << endl;
-    cout << "|    TABLA DE PUNTUACION    |" << endl;
-    cout << "+~~~~~~~~~~~~~~~~~~~~~~~~~~~+" << endl;
-    cout << "|" << endl;
+    cout << "\u001B[31m\u001B[47m" << "+~~~~~~~~~~~~~~~~~~~~~~~~~~~+" << "\u001B[0m" << endl;
+    cout << "\u001B[31m\u001B[47m" << "|    TABLA DE PUNTUACION    |" << "\u001B[0m" << endl;
+    cout << "\u001B[31m\u001B[47m" << "+~~~~~~~~~~~~~~~~~~~~~~~~~~~+" << "\u001B[0m" << endl;
+    cout << "\u001B[31m\u001B[47m" << "|" << "\u001B[0m" << endl;
     
     if (partida->getPlayer1() == NULL || partida->getPlayer2() == NULL) {
         cout << "| No hay puntajes para mostrar." << endl;
         return;
     }
-    cout << "| Puntos: " << partida->getPlayer1()->getScore() << " - " << partida->getPlayer1()->getName() << endl;
-    cout << "| Puntos: " << partida->getPlayer2()->getScore() << " - " << partida->getPlayer2()->getName() << endl;
+    cout << "\u001B[31m\u001B[47m" << "| Puntos: " << partida->getPlayer1()->getScore() << " - " << partida->getPlayer1()->getName() << "\u001B[0m" << endl;
+    cout << "\u001B[31m\u001B[47m" << "| Puntos: " << partida->getPlayer2()->getScore() << " - " << partida->getPlayer2()->getName() << "\u001B[0m" << endl;
 }

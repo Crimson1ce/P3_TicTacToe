@@ -28,9 +28,11 @@ HumanPlayer::~HumanPlayer() {
  */
 int HumanPlayer::move(string board) {
     int position;
-    
     cin >> position;
-    
+    cin.ignore();
     return position;
 }
 
+void HumanPlayer::prepareNewGame() {
+
+}
